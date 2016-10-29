@@ -9,7 +9,8 @@ function gallery (pictures){
   //bind events
   left.addEventListener("click", slide);
   right.addEventListener("click", slide);
-  document.addEventListener('keydown', keyPressed);
+  document.addEventListener("keydown", keyPressed);
+  document.addEventListener("mousemove", toggleButtons);
   render();
   function render(){
     var pic = pictures[index];
@@ -38,6 +39,16 @@ function gallery (pictures){
       render();
     }
   }
+  function toggleButtons(){
+    right.style.display = "block";
+    left.style.display = "block";
+    document.removeEventListener("mousemove", toggleButtons);
+    window.setTimeout(function(){
+      right.style.display = "none";
+      left.style.display = "none";
+      document.addEventListener("mousemove", toggleButtons);
+    }, 3000);
+  }
 }
 
 
@@ -47,10 +58,12 @@ var pictures = [
     description: "Hello world!"
   },
   {
-    src: "pics/2.jpeg"
+    src: "pics/2.jpeg",
+    description: "snow!!!"
   },
   {
-    src: "pics/3.jpeg"
+    src: "pics/3.jpeg",
+    description: "city"
   },
   {
     src: "pics/4.jpeg"

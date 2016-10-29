@@ -17,6 +17,7 @@ body {
 #gallery #left,
 #gallery #right {
   position: absolute;
+  display: none;
   top: 50%;
   height: 50px;
   margin-top: -25px;
@@ -37,7 +38,7 @@ body {
   bottom: 0px;
   width: 100vw;
   height: 100px;
-  background-color: rgba(128,128,128,0.8);
+  background-color: rgba(0,0,0,0.4);
   overflow: hidden;
 }
 #gallery #slider #description p {

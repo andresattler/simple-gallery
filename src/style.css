@@ -31,3 +31,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+#gallery #slider #description {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100vw;
+  height: 100px;
+  background-color: rgba(128,128,128,0.8);
+}

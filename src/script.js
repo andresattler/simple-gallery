@@ -8,6 +8,7 @@ function gallery (pictures){
   //bind events
   left.addEventListener("click", slide);
   right.addEventListener("click", slide);
+  document.addEventListener('keydown', keyPressed);
   render();
   function render(){
     img.src = pictures[index].src;
@@ -18,8 +19,16 @@ function gallery (pictures){
     }else if (e.target.id =="right" && index+1<pictures.length) {
       index++;
     }
-    console.log(index);
     render();
+  }
+  function keyPressed(e){
+    if(e.key =="ArrowLeft" && index>0){
+      index--;
+      render();
+    }else if(e.key =="ArrowRight" && index+1<pictures.length){
+      index++;
+      render();
+    }
   }
 }
 

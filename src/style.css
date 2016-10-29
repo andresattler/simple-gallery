@@ -38,4 +38,11 @@ body {
   width: 100vw;
   height: 100px;
   background-color: rgba(128,128,128,0.8);
+  overflow: hidden;
+}
+#gallery #slider #description p {
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
 }

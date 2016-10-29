@@ -5,13 +5,21 @@ function gallery (pictures){
   var right = document.getElementById("right");
   var slider = document.getElementById("slider");
   var img = document.querySelector("#slider .slide img");
+  var description = document.getElementById("description");
   //bind events
   left.addEventListener("click", slide);
   right.addEventListener("click", slide);
   document.addEventListener('keydown', keyPressed);
   render();
   function render(){
-    img.src = pictures[index].src;
+    var pic = pictures[index];
+    img.src = pic.src;
+    if(pic.description){
+      description.style.display = "block";
+      description.innerHTML = "<p>" + pic.description + "</p>";
+    }else{
+      description.style.display = "none";
+    }
   }
   function slide(e){
     if(e.target.id =="left" && index>0){
@@ -35,16 +43,17 @@ function gallery (pictures){
 
 var pictures = [
   {
-    src: "https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg"
+    src: "pics/1.jpeg",
+    description: "Hello world!"
   },
   {
-    src: "https://static.pexels.com/photos/167699/pexels-photo-167699.jpeg"
+    src: "pics/2.jpeg"
   },
   {
-    src: "https://static.pexels.com/photos/185709/pexels-photo-185709.jpeg"
+    src: "pics/3.jpeg"
   },
   {
-    src: "https://static.pexels.com/photos/189349/pexels-photo-189349.jpeg"
+    src: "pics/4.jpeg"
   }
 ];
 gallery(pictures);

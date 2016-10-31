@@ -4,6 +4,7 @@ function gallery (pictures){
   var left = document.getElementById("left");
   var right = document.getElementById("right");
   var slider = document.getElementById("slider");
+  var slideEl = document.getElementsByClassName('slide');
   var img = document.querySelector("#slider .slide img");
   var description = document.getElementById("description");
   //bind events
@@ -23,6 +24,7 @@ function gallery (pictures){
     }
   }
   function slide(e){
+    console.log("x");
     if(e.target.id =="left" && index>0){
       index--;
     }else if (e.target.id =="right" && index+1<pictures.length) {
@@ -44,8 +46,8 @@ function gallery (pictures){
     left.style.display = "block";
     document.removeEventListener("mousemove", toggleButtons);
     window.setTimeout(function(){
-      right.style.display = "none";
-      left.style.display = "none";
+      right.style.display = "block";
+      left.style.display = "block";
       document.addEventListener("mousemove", toggleButtons);
     }, 3000);
   }

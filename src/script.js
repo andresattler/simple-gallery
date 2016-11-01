@@ -51,8 +51,8 @@ function gallery (pictures){
     left.style.display = "block";
     document.removeEventListener("mousemove", toggleButtons);
     window.setTimeout(function(){
-      right.style.display = "block";
-      left.style.display = "block";
+      right.style.display = "none";
+      left.style.display = "none";
       document.addEventListener("mousemove", toggleButtons);
     }, 3000);
   }

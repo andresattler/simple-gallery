@@ -3,8 +3,6 @@ function gallery (pictures){
   //cache DOM
   var left = document.getElementById("left");
   var right = document.getElementById("right");
-  var slider = document.getElementById("slider");
-  var slideEl = document.getElementsByClassName('slide');
   var img = document.querySelector("#slider .slide img");
   var description = document.getElementById("description");
   //bind events
@@ -14,6 +12,7 @@ function gallery (pictures){
   document.addEventListener("mousemove", toggleButtons);
   render();
   function render(){
+    preload()
     var pic = pictures[index];
     img.src = pic.src;
     if(pic.description){
@@ -21,6 +20,12 @@ function gallery (pictures){
       description.innerHTML = "<p>" + pic.description + "</p>";
     }else{
       description.style.display = "none";
+    }
+  }
+  function preload(){
+    if(index+1<pictures.length){
+      var nextImg = new Image();
+      nextImg.src = pictures[index+1].src;
     }
   }
   function slide(e){

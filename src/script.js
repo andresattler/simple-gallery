@@ -3,7 +3,7 @@ function gallery (pictures){
   //cache DOM
   var left = document.getElementById("left");
   var right = document.getElementById("right");
-  var img = document.querySelector("#slider .slide img");
+  var img = document.querySelector("#slider img");
   var description = document.getElementById("description");
   //bind events
   left.addEventListener("click", slide);

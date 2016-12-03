@@ -60,3 +60,7 @@ body {
   text-align: center;
   font-size: 26px;
 }
+#gallery #slider #description img.emoji {
+  margin: 0px !important;
+  display: inline !important;
+}

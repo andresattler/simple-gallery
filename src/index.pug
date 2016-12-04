@@ -2,13 +2,14 @@ doctype html
 html
   head
     meta(charset="utf-8")
-    link(rel="stylesheet" href="style.css")
-    script(src="script.js")
+    meta(name="robots" content="noindex,nofollow")
+    link(rel="./src/stylesheet" href="style.css")
+    script(src="./src/script.js")
     script(src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2.2")
   body
     #gallery
       button#left &#8592
       #slider
-        img(src="https://a2ua.com/mountains/mountains-007.jpg")
+        img(src="https://a2ua.com/mountains/mountains-007.jpg" alt="loading")
         #description
       button#right &#8594

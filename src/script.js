@@ -11,9 +11,14 @@ window.onload = function(){
     right.addEventListener("click", slide);
     document.addEventListener("keydown", keyPressed);
     document.addEventListener("mousemove", toggleButtons);
+    var images = [];
+    for(var i =0; i<50; i++){
+      images[i]= new Image();
+      images[i].src = pictures[i].src;
+    };
     render();
     function render(){
-      preload()
+      preload();
       var pic = pictures[index];
       img.src = pic.src;
       if(pic.description){
@@ -22,11 +27,11 @@ window.onload = function(){
       }else{
         description.style.display = "none";
       }
-    }
+    };
     function preload(){
-      if(index+1<pictures.length){
+      if(index+50<pictures.length){
         var nextImg = new Image();
-        nextImg.src = pictures[index+1].src;
+        nextImg.src = pictures[index+50].src;
       }
     }
     function slide(e){
